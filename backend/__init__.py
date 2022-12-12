@@ -6,3 +6,6 @@ def create_app():
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:Pink1023Heart!@localhost:5432/grocery_store'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False             
+    
+    from . import models
+    models.db.init_app(app)
